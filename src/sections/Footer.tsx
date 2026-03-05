@@ -1,0 +1,256 @@
+import { 
+  Facebook, 
+  Instagram, 
+  Linkedin, 
+  Twitter,
+  MapPin,
+  Phone,
+  Mail,
+  ArrowUp
+} from 'lucide-react';
+
+const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const footerLinks = {
+    services: [
+      { name: 'Interior Painting', href: '#services' },
+      { name: 'Exterior Painting', href: '#services' },
+      { name: 'Drywall Services', href: '#services' },
+      { name: 'Remodeling', href: '#services' },
+      { name: 'Flooring', href: '#services' },
+    ],
+    company: [
+      { name: 'About Us', href: '#about' },
+      { name: 'Our Projects', href: '#projects' },
+      { name: 'Testimonials', href: '#' },
+      { name: 'Contact', href: '#contact' },
+      { name: 'Careers', href: '#' },
+    ],
+    support: [
+      { name: 'FAQs', href: '#' },
+      { name: 'Get a Quote', href: '#contact' },
+      { name: 'Book Online', href: '#contact' },
+      { name: 'Privacy Policy', href: '#' },
+      { name: 'Terms of Service', href: '#' },
+    ],
+  };
+
+  const socialLinks = [
+    { icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
+    { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
+    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
+  ];
+
+  return (
+    <footer className="bg-brand-black text-white">
+      {/* CTA Section */}
+      <div className="section-padding py-16 border-b border-white/10">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl mb-6">
+            Ready to Transform Your Space?
+          </h2>
+          <p className="text-lg text-white/60 max-w-2xl mx-auto mb-8">
+            Transforme su espacio con C&Y Quality Paint LLC. Obtenga su estimado gratuito hoy 
+            y vea la diferencia que hace la calidad.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a
+              href="#contact"
+              className="btn-primary"
+              onClick={(e) => {
+                e.preventDefault();
+                document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              Get a Free Quote
+            </a>
+            <a
+              href="tel:+15863821603"
+              className="px-8 py-4 border-2 border-white/30 text-white rounded-lg font-semibold hover:bg-white/10 transition-all inline-flex items-center gap-2"
+            >
+              <Phone className="w-5 h-5" />
+              Call Us Now
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Footer */}
+      <div className="section-padding py-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-12">
+            {/* Brand Column */}
+            <div className="col-span-2 md:col-span-4 lg:col-span-1 mb-8 lg:mb-0">
+              <div className="flex items-center gap-2 mb-6">
+                <div className="w-10 h-10 bg-brand-blue rounded-lg flex items-center justify-center">
+                  <span className="font-display text-xl">C&Y</span>
+                </div>
+                <span className="font-display text-2xl tracking-wide">
+                  QUALITY PAINT
+                </span>
+              </div>
+              <p className="text-white/60 text-sm mb-6 max-w-xs">
+                Servicios profesionales de pintura, drywall y remodelación para 
+                propiedades residenciales y comerciales en Florida.
+              </p>
+              
+              {/* Contact Info */}
+              <div className="space-y-3">
+                <a href="tel:+15863821603" className="flex items-center gap-3 text-white/60 hover:text-brand-blue transition-colors text-sm">
+                  <Phone className="w-4 h-4" />
+                  (586) 382-1603
+                </a>
+                <a href="mailto:info@cyqualitypaint.com" className="flex items-center gap-3 text-white/60 hover:text-brand-blue transition-colors text-sm">
+                  <Mail className="w-4 h-4" />
+                  info@cyqualitypaint.com
+                </a>
+                <div className="flex items-center gap-3 text-white/60 text-sm">
+                  <MapPin className="w-4 h-4" />
+                  Hillsborough, FL
+                </div>
+              </div>
+            </div>
+
+            {/* Services Links */}
+            <div>
+              <h3 className="font-display text-lg mb-4">Services</h3>
+              <ul className="space-y-3">
+                {footerLinks.services.map((link) => (
+                  <li key={link.name}>
+                    <a
+                      href={link.href}
+                      className="text-white/60 hover:text-brand-blue transition-colors text-sm"
+                      onClick={(e) => {
+                        if (link.href.startsWith('#')) {
+                          e.preventDefault();
+                          document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }}
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Company Links */}
+            <div>
+              <h3 className="font-display text-lg mb-4">Company</h3>
+              <ul className="space-y-3">
+                {footerLinks.company.map((link) => (
+                  <li key={link.name}>
+                    <a
+                      href={link.href}
+                      className="text-white/60 hover:text-brand-blue transition-colors text-sm"
+                      onClick={(e) => {
+                        if (link.href.startsWith('#')) {
+                          e.preventDefault();
+                          document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }}
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Support Links */}
+            <div>
+              <h3 className="font-display text-lg mb-4">Support</h3>
+              <ul className="space-y-3">
+                {footerLinks.support.map((link) => (
+                  <li key={link.name}>
+                    <a
+                      href={link.href}
+                      className="text-white/60 hover:text-brand-blue transition-colors text-sm"
+                      onClick={(e) => {
+                        if (link.href.startsWith('#')) {
+                          e.preventDefault();
+                          document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }}
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Social Links */}
+            <div>
+              <h3 className="font-display text-lg mb-4">Follow Us</h3>
+              <div className="flex gap-3">
+                {socialLinks.map((social) => {
+                  const Icon = social.icon;
+                  return (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-brand-blue transition-colors"
+                      aria-label={social.label}
+                    >
+                      <Icon className="w-5 h-5" />
+                    </a>
+                  );
+                })}
+              </div>
+
+              {/* Business Hours */}
+              <div className="mt-6">
+                <h4 className="font-medium text-sm mb-2">Business Hours</h4>
+                <div className="text-white/60 text-sm space-y-1">
+                  <div>Mon - Fri: 8AM - 6PM</div>
+                  <div>Saturday: 9AM - 4PM</div>
+                  <div>Sunday: Closed</div>
+                </div>
+              </div>
+
+              {/* HiHello Card Link */}
+              <div className="mt-6">
+                <a 
+                  href="https://hihello.com/card/2/es/p/7a19e9f0-9d68-4a8e-903c-c83436639edb"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-brand-blue/20 text-brand-blue rounded-lg text-sm hover:bg-brand-blue/30 transition-colors"
+                >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-9 13H7v-2h4v2zm6-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                  </svg>
+                  Digital Business Card
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="section-padding py-6 border-t border-white/10">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-white/40 text-sm text-center sm:text-left">
+            © {new Date().getFullYear()} C&Y Quality Paint LLC. All rights reserved.
+          </p>
+          <button
+            onClick={scrollToTop}
+            className="flex items-center gap-2 text-white/40 hover:text-brand-blue transition-colors text-sm"
+          >
+            Back to Top
+            <ArrowUp className="w-4 h-4" />
+          </button>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

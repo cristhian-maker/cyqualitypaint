@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 97%;
+    --foreground: 0 0% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 20%;
+    --primary: 198 100% 53%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 36 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 91%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 198 100% 53%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 91%;
+    --input: 0 0% 91%;
+    --ring: 198 100% 53%;
+    --radius: 0.5rem;
+    
+    /* Brand Colors */
+    --brand-blue: #0eafff;
+    --brand-orange: #ff8a01;
+    --brand-black: #000000;
+    --brand-white: #ffffff;
+    --brand-gray: #f8f8f8;
+    --brand-text: #333333;
+    --brand-border: #e7e7e7;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-orange) 100%);
+  }
+  
+  .btn-primary {
+    @apply px-8 py-4 bg-[#0eafff] text-white font-semibold rounded-lg transition-all duration-300;
+    @apply hover:bg-[#0895dc] hover:shadow-lg hover:shadow-[#0eafff]/30 hover:-translate-y-1;
+  }
+  
+  .btn-secondary {
+    @apply px-8 py-4 bg-[#ff8a01] text-white font-semibold rounded-lg transition-all duration-300;
+    @apply hover:bg-[#e67d00] hover:shadow-lg hover:shadow-[#ff8a01]/30 hover:-translate-y-1;
+  }
+  
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24;
+  }
+  
+  .glass-nav {
+    @apply bg-white/80 backdrop-blur-xl border border-white/20 shadow-lg;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-500 ease-out;
+    @apply hover:shadow-2xl hover:-translate-y-2;
+  }
+  
+  .service-card {
+    @apply relative overflow-hidden cursor-pointer;
+    @apply transition-all duration-500;
+  }
+  
+  .service-card::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10;
+  }
+  
+  .service-card:hover::before {
+    @apply from-black/60 via-black/20 to-transparent;
+  }
+  
+  .magnetic-btn {
+    @apply relative inline-flex items-center justify-center overflow-hidden;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .text-reveal {
+    @apply overflow-hidden;
+  }
+  
+  .text-reveal span {
+    @apply inline-block;
+    animation: textReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  
+  @keyframes textReveal {
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .parallax-slow {
+    will-change: transform;
+  }
+  
+  .parallax-fast {
+    will-change: transform;
+  }
+  
+  .noise-overlay {
+    @apply fixed inset-0 pointer-events-none z-50 opacity-[0.03];
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+  
+  .chat-widget {
+    @apply fixed bottom-6 right-6 z-40;
+  }
+  
+  .chat-button {
+    @apply w-16 h-16 rounded-full bg-[#0eafff] text-white shadow-xl;
+    @apply flex items-center justify-center;
+    @apply transition-all duration-300 hover:scale-110 hover:shadow-2xl;
+    @apply animate-pulse-slow;
+  }
+  
+  @keyframes pulse-slow {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(14, 175, 255, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 20px rgba(14, 175, 255, 0);
+    }
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse-slow 2s infinite;
+  }
+  
+  .phone-button {
+    @apply fixed bottom-6 left-6 z-40;
+  }
+  
+  .phone-btn {
+    @apply w-16 h-16 rounded-full bg-[#ff8a01] text-white shadow-xl;
+    @apply flex items-center justify-center;
+    @apply transition-all duration-300 hover:scale-110 hover:shadow-2xl;
+    @apply animate-pulse-slow;
+  }
+  
+  .phone-btn {
+    animation: pulse-slow 2s infinite;
+    animation-delay: 1s;
+  }
+}
+
+@layer utilities {
+  .custom-expo {
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .fluid-bounce {
+    transition-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8f8f8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0eafff;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0895dc;
+}
+
+/* Selection */
+::selection {
+  background: rgba(14, 175, 255, 0.3);
+  color: inherit;
+}

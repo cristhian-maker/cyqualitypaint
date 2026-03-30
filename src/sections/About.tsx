@@ -13,11 +13,11 @@ const stats = [
 ];
 
 const values = [
-  { icon: Gem, title: 'Calidad', description: 'Nos esforzamos por ofrecer acabados perfectos y duraderos.' },
-  { icon: Shield, title: 'Integridad', description: 'Actuamos con honestidad y transparencia en cada proyecto.' },
-  { icon: Heart, title: 'Compromiso', description: 'Cumplimos con nuestros tiempos y garantizamos resultados.' },
-  { icon: Users, title: 'Trabajo en Equipo', description: 'Valoramos la comunicación y la cooperación.' },
-  { icon: Lightbulb, title: 'Innovación', description: 'Incorporamos nuevas técnicas y materiales para mejorar constantemente.' },
+  { icon: Gem, title: 'Quality', description: 'We strive to deliver perfect and lasting finishes on every project.' },
+  { icon: Shield, title: 'Integrity', description: 'We act with honesty and transparency in every project.' },
+  { icon: Heart, title: 'Commitment', description: 'We meet our deadlines and guarantee results.' },
+  { icon: Users, title: 'Teamwork', description: 'We value communication and cooperation.' },
+  { icon: Lightbulb, title: 'Innovation', description: 'We incorporate new techniques and materials to constantly improve.' },
 ];
 
 const About = () => {
@@ -134,10 +134,10 @@ const About = () => {
                 />
               </div>
 
-              {/* Badge flotante */}
+              {/* Badge flotante - 10 YEARS EXPERIENCE */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-orange text-white rounded-2xl p-6 shadow-glow-orange z-30">
                 <div className="font-display text-5xl">10+</div>
-                <div className="text-sm">Years of<br />Excellence</div>
+                <div className="text-sm">Years of<br />Experience</div>
               </div>
             </div>
 
@@ -152,17 +152,17 @@ const About = () => {
               </h2>
 
               <p className="text-lg text-gray-600 leading-relaxed">
-                C&Y Quality Paint LLC es una empresa establecida en Florida, especializada 
-                principalmente en servicios de pintura residencial y comercial. Nuestro 
-                propósito es ofrecer acabados excepcionales, resultados duraderos y una 
-                atención detallada que refleje calidad en cada proyecto.
+                C&Y Quality Paint LLC is a company established in Florida, specializing 
+                primarily in residential and commercial painting services. Our purpose is 
+                to offer exceptional finishes, lasting results, and detailed attention 
+                that reflects quality in every project.
               </p>
 
               <p className="text-gray-600 leading-relaxed">
-                Además de la pintura, contamos con servicios complementarios de drywall y 
-                remodelación, lo que nos permite ofrecer soluciones completas para proyectos 
-                de renovación y mantenimiento. Desde un simple repinte hasta una transformación 
-                total de interiores, aportamos color, precisión y compromiso en cada trabajo.
+                In addition to painting, we offer complementary drywall and remodeling 
+                services, allowing us to provide complete solutions for renovation and 
+                maintenance projects. From a simple repaint to a total interior transformation, 
+                we bring color, precision, and commitment to every job.
               </p>
 
               {/* CTA */}
@@ -181,30 +181,32 @@ const About = () => {
             </div>
           </div>
 
-          {/* History Section */}
+          {/* History Section - MODIFICADO: 10 años de experiencia */}
           <div className="bg-brand-gray rounded-3xl p-8 lg:p-12 mb-24">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h3 className="font-display text-4xl text-brand-text mb-6">
-                  Our History & Trajectory
+                  Our History & Experience
                 </h3>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  C&Y Quality Paint LLC nació con la visión de ofrecer servicios de pintura 
-                  profesionales, honestos y de alta calidad en el área de Hillsborough y sus 
-                  alrededores. Comenzamos como un equipo pequeño enfocado en el detalle y la 
-                  satisfacción del cliente.
+                  C&Y Quality Paint LLC was born with the vision of offering professional, 
+                  honest, and high-quality painting services in the Hillsborough area and 
+                  surroundings. We started as a small team focused on detail and customer 
+                  satisfaction, and over time we gained recognition for our punctuality, 
+                  responsibility, and impeccable results.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  Gracias a la confianza de nuestros clientes y a la excelencia en cada proyecto, 
-                  la empresa ha crecido y hoy trabaja en colaboración con constructores, 
-                  contratistas generales y propietarios en los condados de Hillsborough y sus 
-                  alrededores, ofreciendo un servicio confiable y de calidad comprobada.
+                  Thanks to the trust of our clients and excellence in every project, the 
+                  company has grown and today works in collaboration with builders, general 
+                  contractors, and property owners in Hillsborough County and surrounding 
+                  areas, offering reliable and proven quality service.
                 </p>
               </div>
               <div className="grid grid-cols-2 gap-4">
+                {/* CAMBIO: 10+ Years Experience en lugar de Year Founded */}
                 <div className="bg-white rounded-2xl p-6 text-center">
-                  <div className="font-display text-5xl text-brand-blue mb-2">2014</div>
-                  <div className="text-gray-600 text-sm">Year Founded</div>
+                  <div className="font-display text-5xl text-brand-blue mb-2">10+</div>
+                  <div className="text-gray-600 text-sm">Years of<br/>Experience</div>
                 </div>
                 <div className="bg-white rounded-2xl p-6 text-center">
                   <div className="font-display text-5xl text-brand-orange mb-2">Hillsborough</div>
@@ -231,10 +233,9 @@ const About = () => {
               </div>
               <h3 className="font-display text-3xl mb-4">Our Mission</h3>
               <p className="text-white/80 leading-relaxed">
-                Brindar servicios de pintura y remodelación de alta calidad que mejoren la 
-                belleza, el valor y el confort de cada propiedad, ofreciendo siempre 
-                profesionalismo, responsabilidad y resultados que superen las expectativas 
-                de nuestros clientes.
+                To provide high-quality painting and remodeling services that enhance the 
+                beauty, value, and comfort of every property, always offering professionalism, 
+                responsibility, and results that exceed our clients' expectations.
               </p>
             </div>
 
@@ -245,9 +246,9 @@ const About = () => {
               </div>
               <h3 className="font-display text-3xl mb-4">Our Vision</h3>
               <p className="text-white/80 leading-relaxed">
-                Convertirnos en una de las empresas de pintura y remodelación más reconocidas 
-                y confiables de Florida, destacándonos por nuestro compromiso, innovación y 
-                excelencia en el trabajo.
+                To become one of the most recognized and reliable painting and remodeling 
+                companies in Florida, standing out for our commitment, innovation, and 
+                excellence in work.
               </p>
             </div>
           </div>
@@ -257,7 +258,7 @@ const About = () => {
             <div className="text-center mb-12">
               <h3 className="font-display text-4xl text-brand-text mb-4">Our Values</h3>
               <p className="text-gray-600 max-w-2xl mx-auto">
-                Los principios que guían cada proyecto que emprendemos
+                The principles that guide every project we undertake
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">

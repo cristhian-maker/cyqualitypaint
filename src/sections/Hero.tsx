@@ -11,17 +11,17 @@ const Hero = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Timeline de entrada
+      // Entry timeline
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-      // Animación de la imagen
+      // Image animation
       tl.fromTo(
         imageRef.current,
         { scale: 1.2, opacity: 0 },
         { scale: 1, opacity: 1, duration: 1.2 }
       );
 
-      // Animación de la línea azul
+      // Blue line animation
       tl.fromTo(
         lineRef.current,
         { scaleY: 0 },
@@ -29,7 +29,7 @@ const Hero = () => {
         '-=0.8'
       );
 
-      // Animación del título (caracteres)
+      // Title animation (characters)
       if (titleRef.current) {
         const chars = titleRef.current.querySelectorAll('.char');
         tl.fromTo(
@@ -40,7 +40,7 @@ const Hero = () => {
         );
       }
 
-      // Animación del contenido
+      // Content animation
       tl.fromTo(
         contentRef.current?.children || [],
         { y: 30, opacity: 0 },
@@ -52,7 +52,7 @@ const Hero = () => {
     return () => ctx.revert();
   }, []);
 
-  // Efecto parallax al hacer scroll
+  // Parallax effect on scroll
   useEffect(() => {
     const handleScroll = () => {
       if (imageRef.current) {
@@ -81,7 +81,7 @@ const Hero = () => {
       ref={heroRef}
       className="relative min-h-screen w-full overflow-hidden bg-brand-black"
     >
-      {/* Imagen de fondo */}
+      {/* Background image */}
       <div
         ref={imageRef}
         className="absolute inset-0 w-full h-full"
@@ -95,17 +95,17 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
       </div>
 
-      {/* Línea divisoria azul */}
+      {/* Blue dividing line */}
       <div
         ref={lineRef}
         className="absolute left-[45%] top-0 w-1 h-full bg-brand-blue origin-top hidden lg:block"
         style={{ transform: 'skewX(-15deg)' }}
       />
 
-      {/* Contenido */}
+      {/* Content */}
       <div className="relative z-10 min-h-screen flex items-center section-padding">
         <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center pt-24">
-          {/* Columna izquierda - Contenido */}
+          {/* Left column - Content */}
           <div className="space-y-8">
             <div className="overflow-hidden">
               <h1
@@ -118,9 +118,8 @@ const Hero = () => {
 
             <div ref={contentRef} className="space-y-6">
               <p className="text-lg sm:text-xl text-white/80 max-w-lg font-light leading-relaxed">
-                C&Y Quality Paint LLC ofrece servicios de pintura, drywall y remodelación 
-                de alta calidad en Florida. Acabados excepcionales y atención detallada 
-                en cada proyecto.
+                C&Y Quality Paint LLC offers high-quality painting, drywall, and remodeling 
+                services in Florida. Exceptional finishes and detailed attention in every project.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -165,9 +164,9 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Columna derecha - Tarjetas flotantes */}
+          {/* Right column - Floating cards */}
           <div className="hidden lg:block relative h-[500px]">
-            {/* Tarjeta de chat */}
+            {/* Chat card */}
             <div className="absolute top-10 right-10 bg-white rounded-2xl p-5 shadow-2xl animate-float">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 bg-brand-blue rounded-full flex items-center justify-center">
@@ -180,7 +179,7 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Tarjeta de citas */}
+            {/* Booking card */}
             <div className="absolute bottom-20 left-10 bg-white rounded-2xl p-5 shadow-2xl animate-float" style={{ animationDelay: '1s' }}>
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 bg-brand-orange rounded-full flex items-center justify-center">
@@ -193,7 +192,7 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Badge de garantía */}
+            {/* Warranty badge */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-blue text-white rounded-full w-32 h-32 flex flex-col items-center justify-center shadow-glow">
               <span className="font-display text-3xl">2</span>
               <span className="text-xs text-center">Years<br/>Warranty</span>

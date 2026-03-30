@@ -1,8 +1,6 @@
 import { 
   Facebook, 
-  Instagram, 
-  Linkedin, 
-  Twitter,
+  Instagram,
   MapPin,
   Phone,
   Mail,
@@ -27,7 +25,6 @@ const Footer = () => {
       { name: 'Our Projects', href: '#projects' },
       { name: 'Testimonials', href: '#' },
       { name: 'Contact', href: '#contact' },
-      { name: 'Careers', href: '#' },
     ],
     support: [
       { name: 'FAQs', href: '#' },
@@ -38,11 +35,27 @@ const Footer = () => {
     ],
   };
 
+  // Redes sociales actualizadas - TUS LINKS REALES
   const socialLinks = [
-    { icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
-    { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
+    { 
+      icon: Facebook, 
+      href: 'https://www.facebook.com/CyStore.Calzado?rdid=9gh15ZpioKMJVQ2a&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Aza2vRr3c%2F#', 
+      label: 'Facebook' 
+    },
+    { 
+      icon: Instagram, 
+      href: 'https://www.instagram.com/cyqualitypaint?igsh=MW96YWpxZnRzaHNsYQ==', 
+      label: 'Instagram' 
+    },
+    { 
+      icon: () => (
+        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+        </svg>
+      ), 
+      href: 'https://www.tiktok.com/@cyqualitypaint', 
+      label: 'TikTok' 
+    },
   ];
 
   return (
@@ -54,8 +67,8 @@ const Footer = () => {
             Ready to Transform Your Space?
           </h2>
           <p className="text-lg text-white/60 max-w-2xl mx-auto mb-8">
-            Transforme su espacio con C&Y Quality Paint LLC. Obtenga su estimado gratuito hoy 
-            y vea la diferencia que hace la calidad.
+            Transform your space with C&Y Quality Paint LLC. Get your free quote today 
+            and see the difference quality makes.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
@@ -69,7 +82,7 @@ const Footer = () => {
               Get a Free Quote
             </a>
             <a
-              href="tel:+15863821603"
+              href="tel:+18139520911"
               className="px-8 py-4 border-2 border-white/30 text-white rounded-lg font-semibold hover:bg-white/10 transition-all inline-flex items-center gap-2"
             >
               <Phone className="w-5 h-5" />
@@ -94,15 +107,15 @@ const Footer = () => {
                 </span>
               </div>
               <p className="text-white/60 text-sm mb-6 max-w-xs">
-                Servicios profesionales de pintura, drywall y remodelación para 
-                propiedades residenciales y comerciales en Florida.
+                Professional painting, drywall, and remodeling services for 
+                residential and commercial properties in Florida.
               </p>
               
-              {/* Contact Info */}
+              {/* Contact Info - TELÉFONO ACTUALIZADO */}
               <div className="space-y-3">
-                <a href="tel:+15863821603" className="flex items-center gap-3 text-white/60 hover:text-brand-blue transition-colors text-sm">
+                <a href="tel:+18139520911" className="flex items-center gap-3 text-white/60 hover:text-brand-blue transition-colors text-sm">
                   <Phone className="w-4 h-4" />
-                  (586) 382-1603
+                  (813) 952-0911
                 </a>
                 <a href="mailto:info@cyqualitypaint.com" className="flex items-center gap-3 text-white/60 hover:text-brand-blue transition-colors text-sm">
                   <Mail className="w-4 h-4" />
@@ -184,7 +197,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Social Links */}
+            {/* Social Links - REDES ACTUALIZADAS */}
             <div>
               <h3 className="font-display text-lg mb-4">Follow Us</h3>
               <div className="flex gap-3">

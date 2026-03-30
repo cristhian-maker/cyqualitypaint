@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, FileText } from 'lucide-react';
+import logo from '../img/logo.png';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,18 +40,20 @@ const Navigation = () => {
         }`}
       >
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo - ACTUALIZADO CON IMAGEN */}
           <a
             href="#"
-            className="flex items-center gap-2 group"
+            className="flex items-center gap-3 group"
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
           >
-            <div className="w-10 h-10 bg-brand-blue rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-              <span className="text-white font-display text-lg">C&Y</span>
-            </div>
+            <img 
+              src={logo} 
+              alt="C&Y Quality Paint LLC" 
+              className="w-10 h-10 object-contain rounded-lg group-hover:scale-110 transition-transform"
+            />
             <span className={`font-display text-xl tracking-wide transition-colors ${
               isScrolled ? 'text-brand-text' : 'text-white'
             }`}>
@@ -74,11 +77,21 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:flex items-center gap-4">
-            <a
-              href="tel:+15863821603"
+          {/* CTA Buttons */}
+          <div className="hidden md:flex items-center gap-3">
+            {/* Get Free Quote Button */}
+            <button
+              onClick={() => scrollToSection('#contact')}
               className="flex items-center gap-2 px-5 py-2.5 bg-brand-orange text-white rounded-full font-medium text-sm hover:bg-brand-orange/90 transition-all hover:shadow-glow-orange"
+            >
+              <FileText className="w-4 h-4" />
+              Get a Free Quote
+            </button>
+            
+            {/* Call Now Button */}
+            <a
+              href="tel:+18139520911"
+              className="flex items-center gap-2 px-5 py-2.5 bg-brand-blue text-white rounded-full font-medium text-sm hover:bg-brand-blue/90 transition-all hover:shadow-lg"
             >
               <Phone className="w-4 h-4" />
               Call Now
@@ -106,11 +119,13 @@ const Navigation = () => {
         }`}
       >
         <div className="flex flex-col items-center justify-center h-full gap-8">
-          {/* Logo */}
-          <div className="flex items-center gap-2 mb-8">
-            <div className="w-12 h-12 bg-brand-blue rounded-lg flex items-center justify-center">
-              <span className="text-white font-display text-xl">C&Y</span>
-            </div>
+          {/* Logo - MOBILE */}
+          <div className="flex items-center gap-3 mb-8">
+            <img 
+              src={logo} 
+              alt="C&Y Quality Paint LLC" 
+              className="w-12 h-12 object-contain rounded-lg"
+            />
             <span className="font-display text-2xl tracking-wide text-brand-text">
               QUALITY PAINT
             </span>
@@ -125,9 +140,20 @@ const Navigation = () => {
               {link.name}
             </button>
           ))}
+          
+          {/* Get Free Quote - Mobile */}
+          <button
+            onClick={() => scrollToSection('#contact')}
+            className="flex items-center gap-2 px-8 py-4 bg-brand-orange text-white rounded-full font-medium text-lg"
+          >
+            <FileText className="w-5 h-5" />
+            Get a Free Quote
+          </button>
+          
+          {/* Call Now - Mobile */}
           <a
-            href="tel:+15863821603"
-            className="flex items-center gap-2 px-8 py-4 bg-brand-orange text-white rounded-full font-medium text-lg mt-4"
+            href="tel:+18139520911"
+            className="flex items-center gap-2 px-8 py-4 bg-brand-blue text-white rounded-full font-medium text-lg"
           >
             <Phone className="w-5 h-5" />
             Call Now

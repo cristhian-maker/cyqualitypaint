@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Phone, X, MessageSquare, Calendar, CreditCard } from 'lucide-react';
+import { Phone, X, MessageSquare, Calendar, CreditCard, FileText } from 'lucide-react';
 
 const PhoneButton = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,29 +9,36 @@ const PhoneButton = () => {
       label: 'Call Now',
       description: 'Speak with us directly',
       icon: Phone,
-      href: 'tel:+15863821603',
+      href: 'tel:+18139520911',
       color: 'bg-brand-blue',
     },
     {
       label: 'WhatsApp',
       description: 'Chat with us on WhatsApp',
       icon: MessageSquare,
-      href: 'https://wa.me/15863821603',
+      href: 'https://wa.me/18139520911',
       color: 'bg-green-500',
     },
     {
-      label: 'Book Estimate',
-      description: 'Schedule a free consultation',
-      icon: Calendar,
+      label: 'Get Free Quote',
+      description: 'Request your estimate now',
+      icon: FileText,
       href: '#contact',
       color: 'bg-brand-orange',
+    },
+    {
+      label: 'Book Estimate',
+      description: 'Schedule a consultation',
+      icon: Calendar,
+      href: '#contact',
+      color: 'bg-purple-500',
     },
     {
       label: 'Digital Card',
       description: 'View our HiHello card',
       icon: CreditCard,
       href: 'https://hihello.com/card/2/es/p/7a19e9f0-9d68-4a8e-903c-c83436639edb',
-      color: 'bg-purple-500',
+      color: 'bg-pink-500',
     },
   ];
 

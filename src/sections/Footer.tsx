@@ -61,39 +61,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-brand-black text-white">
-      {/* CTA Section */}
-      <div className="section-padding py-16 border-b border-white/10">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl mb-6">
-            Ready to Transform Your Space?
-          </h2>
-          <p className="text-lg text-white/60 max-w-2xl mx-auto mb-8">
-            Transform your space with C&Y Quality Paint LLC. Get your free quote today 
-            and see the difference quality makes.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href="#contact"
-              className="btn-primary"
-              onClick={(e) => {
-                e.preventDefault();
-                document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-            >
-              Get a Free Quote
-            </a>
-            <a
-              href="tel:+18139520911"
-              className="px-8 py-4 border-2 border-white/30 text-white rounded-lg font-semibold hover:bg-white/10 transition-all inline-flex items-center gap-2"
-            >
-              <Phone className="w-5 h-5" />
-              Call Us Now
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Footer */}
+     {/* Main Footer */}
       <div className="section-padding py-16">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-12">

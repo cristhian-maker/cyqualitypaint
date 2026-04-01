@@ -60,28 +60,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-brand-black text-white">
-     {/* Main Footer */}
-      <div className="section-padding py-16">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-12">
-            {/* Brand Column - LOGO ACTUALIZADO */}
-            <div className="col-span-2 md:col-span-4 lg:col-span-1 mb-8 lg:mb-0">
-              <div className="flex items-center gap-3 mb-6">
-                <img 
-                  src={logo} 
-                  alt="C&Y Quality Paint LLC" 
-                  className="w-10 h-10 object-contain rounded-lg"
-                />
-                <span className="font-display text-2xl tracking-wide">
-                  QUALITY PAINT
-                </span>
-              </div>
-              <p className="text-white/60 text-sm mb-6 max-w-xs">
-                Professional painting, drywall, and remodeling services for 
-                residential and commercial properties in Florida.
-              </p>
-              
+    <footer className="bg-brand-black text-white">     
               {/* Contact Info */}
               <div className="space-y-3">
                 <a href="tel:+18139520911" className="flex items-center gap-3 text-white/60 hover:text-brand-blue transition-colors text-sm">
